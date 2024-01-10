@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -13,19 +15,14 @@ public class RombusTest {
     }
     @Test
     public void calc(){
-        double actualData = this.rombusz.calcArea(20,60.0);
-        double expected = 0;
-        Assert.assertEquals(actualData, expected, 0.1, "Hiba! Rossz végeredmény!");
+        double actual = this.rombusz.calcArea(20,60.0);
+        double expected = 346.4;
+        Assert.assertEquals(actual, expected, 0.1, "Hiba! Rossz végeredmény!");
     }
-    @Test
-    public void calc2(){
-        double actualData2 = this.rombusz.calcArea(20,60.0);
-        double expected2 = 20.9;
-        Assert.assertEquals(actualData2, expected2, 0.1, "Hiba! Rossz végeredmény!");
+    @Test(expectedExceptions = InputMismatchException.class,
+    expectedExceptionsMessageRegExp = "Hiba! Kisebb a bevitel mint 0!")
+    public void testCalcAreaZeroSide() {
+        this.rombusz.calcArea(0, 60.0);
     }
 
-    // @Test
-    // public void calc3(){
-
-    // }
 }
