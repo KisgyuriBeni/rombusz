@@ -19,9 +19,19 @@ public class RombusTest {
         double expected = 346.4;
         Assert.assertEquals(actual, expected, 0.1, "Hiba! Rossz végeredmény!");
     }
+    @Test
+    public void calcCircTest(){
+        double actual = this.rombusz.caclCirc(20.0);
+        double expected = 80.0;
+        Assert.assertEquals(actual, expected, 0.1, "Hiba! Rossz végeredmény!");
+    }
     @Test(expectedExceptions = InputMismatchException.class)
     public void testCalcZeroAlpha() {
         this.rombusz.calcArea(20, 0);
+    }
+    @Test(expectedExceptions = InputMismatchException.class)
+    public void testcalcCircSideZero() {
+        this.rombusz.caclCirc(0);
     }
     @Test(expectedExceptions = InputMismatchException.class,
     expectedExceptionsMessageRegExp = "Hiba! Kisebb a bevitel mint 0!")
