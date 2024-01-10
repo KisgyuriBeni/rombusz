@@ -13,14 +13,19 @@ public class RombusTest {
     }
     @Test
     public void calc(){
-        double actualAlpha = this.rombusz.calcArea(60.0);
-        double side = this.rombusz.calcArea(20.0);
+        double actualData = this.rombusz.calcArea(20,60.0);
         double expected = 0;
-        Assert.assertEquals(actualAlpha, expected, 0.1, "Hiba! Rossz végeredmény!");
+        Assert.assertEquals(actualData, expected, 0.1, "Hiba! Rossz végeredmény!");
     }
-
     @Test
     public void calc2(){
-
+        double actualData2 = this.rombusz.calcArea(20,60.0);
+        double expected2 = 20.9;
+        Assert.assertEquals(actualData2, expected2, 0.1, "Hiba! Rossz végeredmény!");
     }
+
+    // @Test
+    // public void calc3(){
+
+    // }
 }
