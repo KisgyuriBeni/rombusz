@@ -11,7 +11,12 @@ public class RombusTest {
         this.rombusz = new Rombusz();
     }
     @Test
-    public void calc(){}
+    public void calc(){
+        double actualAlpha = this.rombusz.calcArea(60.0);
+    }
+
     @Test
-    public void calc2(){}
+    public void calc2(){
+
+    }
 }
